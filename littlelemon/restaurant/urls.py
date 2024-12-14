@@ -8,4 +8,7 @@ urlpatterns = [
     path('booking/', views.BookingView.as_view()),
     path('booking/<int:pk>', views.SingleBookingView.as_view()),
     path('api-token-auth/', obtain_auth_token),
+    path('', views.homepage),
+    path('menus/', views.menus, name='menus'),
+    path('users/', views.UserView.as_view())
 ]

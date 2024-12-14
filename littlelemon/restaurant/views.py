@@ -31,3 +31,14 @@ class UserViewSets(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
+
+class UserView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated] 
+def homepage(request):
+    return render(request, 'index.html')
+
+def menus(request):
+    context = {'menus': Menu.objects.all()}
+    return render(request, 'menu.html', context)

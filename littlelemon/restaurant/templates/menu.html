@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>View Menu</h1>
+
+    {% for menu in menus %}
+
+        <p>{{ menu.title }}</p>
+
+    {% empty %}
+        <p>No Menus Available</p>
+
+    {% endfor %}
+{% endblock content %}
